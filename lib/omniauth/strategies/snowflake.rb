@@ -8,12 +8,7 @@ module OmniAuth
 
       uid { raw_info["uid"] }
 
-      info { 
-        { :email      => raw_info['email'],
-          :first_name => raw_info['first_name'],
-          :last_name  => raw_info['last_name'],
-          :role       => raw_info['clinical_role'] }
-      }
+      info { raw_info }
 
       def authorize_params
         super.tap do |params|
